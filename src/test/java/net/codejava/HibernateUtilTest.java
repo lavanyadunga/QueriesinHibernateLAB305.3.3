@@ -76,14 +76,11 @@ public class HibernateUtilTest {
 		
 	//  YOUR CODE HERE!!
 		Integer id = 1;
-
 		Product product = new Product (id,"iphone 11",999 );
-		 
 		session.beginTransaction();
 		session.update(product);
 		session.getTransaction().commit();
 		Product updatedproduct = session.find(Product.class,id);
-		//product=(Product)session.byId(Product.class);
 		assertEquals("iphone 11",updatedproduct.getName());
 		
 	}
